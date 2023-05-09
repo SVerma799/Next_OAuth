@@ -7,7 +7,7 @@ export default function Login() {
     <div>
       {session ? (
         <>
-          <h1>Logged in as {session.user.email}</h1>
+          <h1>Logged in as {session.user?.email}</h1>
           <button onClick={() => signOut()}>Sign out</button>
         </>
       ) : (
