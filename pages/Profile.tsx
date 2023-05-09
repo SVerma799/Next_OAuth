@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSession, signOut, getSession } from "next-auth/react";
 export default function Profile() {
   const { data: session } = useSession();
+
+  useEffect(() => {
+    if (!session) {
+      return;
+    }
+
+    console.log(session.user);
+  }, [session]);
 
   return (
     <div>
